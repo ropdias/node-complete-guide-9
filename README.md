@@ -6,7 +6,7 @@ Section 13 covered:
 
 - [x] What is Mongoose?
 - [x] Connecting to the MongoDB Server with Mongoose
-- [ ] Creating the Product Schema
+- [x] Creating the Product Schema
 - [ ] Saving Data Through Mongoose
 - [ ] Fetching All Products
 - [ ] Fetching a Single Product

@@ -34,7 +34,7 @@ app.use(errorControler.get404);
 
 mongoose
   .connect(
-    "mongodb+srv://node-user:nodecomplete@cluster0.p1tfc.mongodb.net/shop2?retryWrites=true&w=majority"
+    "mongodb+srv://node-user:nodecomplete@cluster0.p1tfc.mongodb.net/shop-mongoose?retryWrites=true&w=majority"
   )
   .then((result) => {
     app.listen(3000);
