@@ -8,7 +8,7 @@ Section 13 covered:
 - [x] Connecting to the MongoDB Server with Mongoose
 - [x] Creating the Product Schema
 - [x] Saving Data Through Mongoose
-- [ ] Fetching All Products
+- [x] Fetching All Products
 - [ ] Fetching a Single Product
 - [ ] Updating Products
 - [ ] Deleting Products
