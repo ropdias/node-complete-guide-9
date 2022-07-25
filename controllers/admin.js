@@ -22,11 +22,13 @@ exports.postAddProduct = (req, res, next) => {
 
   product
     .save() // This will be provided by mongoose
-    .then((result) => { // Technically we don't get a promise but mongoose still gives us a then method
+    .then((result) => {
+      // Technically we don't get a promise but mongoose still gives us a then method
       console.log(`Created Product: ${title} with id: ${result.insertedId}`);
       res.redirect("/admin/products");
     })
-    .catch((err) => { // And mongoose also gives us a catch method we can call
+    .catch((err) => {
+      // And mongoose also gives us a catch method we can call
       console.log(err);
     });
 };
@@ -64,16 +66,14 @@ exports.postEditProduct = (req, res, next) => {
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
 
-  const product = new Product(
-    updatedTitle,
-    updatedPrice,
-    updatedDesc,
-    updatedImageUrl,
-    prodId
-  );
-
-  product
-    .save()
+  Product.findById(prodId) // findById() returns a mongoose object where we can call .save()
+    .then((product) => {
+      product.title = updatedTitle;
+      product.price = updatedPrice;
+      product.description = updatedDesc;
+      product.imageUrl = updatedImageUrl;
+      return product.save(); // if we use the save() here it will not create a new one instead it will update behind the scenes
+    })
     .then(() => {
       console.log("UPDATED PRODUCT!");
       res.redirect("/admin/products");
@@ -82,7 +82,7 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll()
+  Product.find()
     .then((products) => {
       res.render("admin/products", {
         prods: products,

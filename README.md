@@ -10,7 +10,7 @@ Section 13 covered:
 - [x] Saving Data Through Mongoose
 - [x] Fetching All Products
 - [x] Fetching a Single Product
-- [ ] Updating Products
+- [x] Updating Products
 - [ ] Deleting Products
 - [ ] Adding and Using a User Model
 - [ ] Using Relations in Mongoose
