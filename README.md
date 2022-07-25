@@ -5,7 +5,7 @@ Examples from the **"Section 13: Working with Mongoose"** of the course **"NodeJ
 Section 13 covered:
 
 - [x] What is Mongoose?
-- [ ] Connecting to the MongoDB Server with Mongoose
+- [x] Connecting to the MongoDB Server with Mongoose
 - [ ] Creating the Product Schema
 - [ ] Saving Data Through Mongoose
 - [ ] Fetching All Products
