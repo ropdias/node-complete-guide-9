@@ -13,15 +13,20 @@ exports.postAddProduct = (req, res, next) => {
   const imageUrl = req.body.imageUrl;
   const price = req.body.price;
   const description = req.body.description;
-  const product = new Product(title, price, description, imageUrl, null);
+  const product = new Product({
+    title: title,
+    price: price,
+    description: description,
+    imageUrl: imageUrl,
+  });
 
   product
-    .save()
-    .then((result) => {
+    .save() // This will be provided by mongoose
+    .then((result) => { // Technically we don't get a promise but mongoose still gives us a then method
       console.log(`Created Product: ${title} with id: ${result.insertedId}`);
       res.redirect("/admin/products");
     })
-    .catch((err) => {
+    .catch((err) => { // And mongoose also gives us a catch method we can call
       console.log(err);
     });
 };
