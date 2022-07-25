@@ -9,7 +9,7 @@ Section 13 covered:
 - [x] Creating the Product Schema
 - [x] Saving Data Through Mongoose
 - [x] Fetching All Products
-- [ ] Fetching a Single Product
+- [x] Fetching a Single Product
 - [ ] Updating Products
 - [ ] Deleting Products
 - [ ] Adding and Using a User Model
