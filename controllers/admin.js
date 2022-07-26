@@ -19,7 +19,7 @@ exports.postAddProduct = (req, res, next) => {
     description: description,
     imageUrl: imageUrl,
     // userId: req.user._id // You can get the ._id directly or:
-    userId: req.user // You can use the object directly and mongoose will get the ._id for you
+    userId: req.user, // You can use the object directly and mongoose will get the ._id for you
   });
 
   product
@@ -85,6 +85,8 @@ exports.postEditProduct = (req, res, next) => {
 
 exports.getProducts = (req, res, next) => {
   Product.find()
+    // .select("title price -_id") // only the title and price, and explicit excluding the _id
+    // .populate("userId", "name") // only the field "name" (the field _id will also be populated)
     .then((products) => {
       res.render("admin/products", {
         prods: products,
