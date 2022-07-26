@@ -15,7 +15,7 @@ Section 13 covered:
 - [x] Adding and Using a User Model
 - [x] Using Relations in Mongoose
 - [x] One Important Thing About Fetching Relations
-- [ ] Working on the Shopping Cart
+- [x] Working on the Shopping Cart
 - [ ] Loading the Cart
 - [ ] Deleting Cart Items
 - [ ] Creating & Getting Orders
