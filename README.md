@@ -13,7 +13,7 @@ Section 13 covered:
 - [x] Updating Products
 - [x] Deleting Products
 - [x] Adding and Using a User Model
-- [ ] Using Relations in Mongoose
+- [x] Using Relations in Mongoose
 - [ ] One Important Thing About Fetching Relations
 - [ ] Working on the Shopping Cart
 - [ ] Loading the Cart

@@ -18,6 +18,8 @@ exports.postAddProduct = (req, res, next) => {
     price: price,
     description: description,
     imageUrl: imageUrl,
+    // userId: req.user._id // You can get the ._id directly or:
+    userId: req.user // You can use the object directly and mongoose will get the ._id for you
   });
 
   product
