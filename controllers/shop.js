@@ -78,7 +78,13 @@ exports.postOrder = (req, res, next) => {
     .populate("cart.items.productId")
     .then((user) => {
       const products = user.cart.items.map((i) => {
-        return { quantity: i.quantity, product: i.productId };
+        // populate is bit of a magic here in the sense that it is a function in mongoose
+        // which is used for populating the data inside the reference. So basically it just
+        // references the documents from other collection hence the same does not get reflected
+        // in the database. It's just for referencing so you can simply map it on your code by
+        // referencing documents from different collections and getting them in the form you want
+        // in your nodejs code. That's why here you need the ._doc attribute
+        return { quantity: i.quantity, product: { ...i.productId._doc } };
       });
       const order = new Order({
         user: {
@@ -88,6 +94,9 @@ exports.postOrder = (req, res, next) => {
         products: products,
       });
       return order.save();
+    })
+    .then(() => {
+      return req.user.clearCart();
     })
     .then(() => {
       res.redirect("/orders");

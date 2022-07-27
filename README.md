@@ -19,7 +19,7 @@ Section 13 covered:
 - [x] Loading the Cart
 - [x] Deleting Cart Items
 - [x] Creating & Getting Orders
-- [ ] Storing All Order Related Data
+- [x] Storing All Order Related Data
 - [ ] Clearing the Cart After Storing an Order
 - [ ] Getting & Displaying the Orders
 
