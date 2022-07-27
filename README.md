@@ -17,7 +17,7 @@ Section 13 covered:
 - [x] One Important Thing About Fetching Relations
 - [x] Working on the Shopping Cart
 - [x] Loading the Cart
-- [ ] Deleting Cart Items
+- [x] Deleting Cart Items
 - [ ] Creating & Getting Orders
 - [ ] Storing All Order Related Data
 - [ ] Clearing the Cart After Storing an Order
